@@ -1,0 +1,14 @@
+<template name="TicketDataTemplate">
+  <view class="table">
+    <view class="tr bg-w">
+      <view class="th">候选项</view>
+      <view class="th">投票人次</view>
+      <view class="th">访问量</view>
+    </view>
+    <view class="tr bg-g">
+      <view class="td">{{tickets.count}}</view>
+      <view class="td">{{tickets.ticket_count}}</view>
+      <view class="td">{{tickets.look_count}}</view>
+    </view>
+  </view>
+</template>

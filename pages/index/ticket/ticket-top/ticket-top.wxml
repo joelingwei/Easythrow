@@ -1,0 +1,13 @@
+<import src="../ticket-top-list/ticket-top-list-template.wxml" />
+<view class="container" style="margin-bottom:30rpx;">
+  <view class="banner">
+    <image src="{{tops.list.pic}}"></image>
+  </view>
+  <view class="container" style="margin-bottom:30rpx;">
+    <view class="ul">
+      <block wx:for="{{tops.ticket_list}}" wx:for-item="item">
+        <template is="TicketTopListTemplate" data="{{...item}}" />
+      </block>
+    </view>
+  </view>
+</view>

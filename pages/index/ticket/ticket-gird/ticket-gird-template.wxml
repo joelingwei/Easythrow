@@ -1,0 +1,28 @@
+<template name="TicketGirdTemplate">
+  <view class="ticket-container">
+    <image class="ticket-img" catchtap="onTicketTap" data-ticketlistId="{{id}}" data-ticketlistTid="{{tid}}" data-ticketlistTop="{{top}}" src="{{pic}}"></image>
+    <view class="radio-item" catchtap='onTicketCurrtent' data-ticketsId="{{id}}">
+      <view class="radio-input"></view>
+      <icon type="success" size="15" wx:if="{{isTicket}}"/>
+      <icon type="circle" size="15" wx:else />
+      <text class="ticket-title">{{name}}</text>
+    </view>
+    <view class="ticket-list-item-thumb-caption-progress">
+      <view class="ticket-list-item-thumb-caption-progress-bar" style="width: {{ticket_point}}%;">
+        <text class="ticket-title" style="color:#fff;">{{ticket_count}}票</text>
+      </view>
+    </view>
+    <view class="stat">
+      <view title="票数" class="quantity">
+        <view>
+          <text class="ticket-title">票数</text>
+          <text class="badge">{{ticket_count}}</text>
+        </view>
+      </view>
+      <view title="名次" class="rank">
+        <text class="ticket-title">名次</text>
+        <text class="badge">{{top}}</text>
+      </view>
+    </view>
+  </view>
+</template>

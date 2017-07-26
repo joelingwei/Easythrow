@@ -1,0 +1,14 @@
+.container{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;  
+}
+text{
+  font-family: MicroSoft YaHei;
+  font-size: 24rpx;
+  color: #666;
+}

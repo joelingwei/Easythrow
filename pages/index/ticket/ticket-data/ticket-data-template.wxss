@@ -1,0 +1,40 @@
+.tickets {
+  width: 90%;
+}
+
+.table {
+  border: 0px solid darkgray;
+  font-family: MicroSoft YaHei;
+  font-size: 24rpx;
+}
+
+.tr {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  height: 1.5rem;
+  align-items: center;
+}
+
+.td {
+  width: 40%;
+  justify-content: center;
+  text-align: center;
+}
+
+.bg-w {
+  background: #2ABDA2;
+}
+
+.bg-g {
+  background: #e6f3f9;
+}
+
+.th {
+  width: 40%;
+  justify-content: center;
+  color: #fff;
+  display: flex;
+  height: 1.5rem;
+  align-items: center;
+}

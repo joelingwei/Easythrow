@@ -1,0 +1,30 @@
+<import src="ticket-gird/ticket-gird-template.wxml" />
+<import src="ticket-data/ticket-data-template.wxml" />
+<view class="container" style="margin-bottom:30rpx;">
+  <view class="banner">
+    <image src="{{tickets.list.pic}}"></image>
+  </view>
+  <text class="desc">{{tickets.list.content}}</text>
+  <view class="time_status">
+    <icon type="waiting" size="14" />
+    <text wx:if="{{tickets.list.end_time}}">投票已开始，截止时间：{{tickets.list.end_time}}</text>
+    <text wx:else>投票已开始，未有截止时间限制</text>
+  </view>
+  <view class="tickets">
+    <template is="TicketDataTemplate" data="{{tickets}}" />
+  </view>
+  <view class="search">
+    <icon type="search" class="search-img" size="20" color="#405f80" />
+    <input type="text" placeholder="你的名字、速度与激情" placeholder-class="placeholder" bindfocus="onBindFocus" bindconfirm="onBindConfirm" />
+    <icon type="clear" class="xx-img" bindtap="onCancelImgTap" size="20" color="#405f80" wx:if="{{searchPanelShow}}" />
+  </view>
+  <view class="tickets-container">
+    <radio-group class="radio-group" bindchange="radioChange">
+      <block wx:for="{{tickets.ticket_list}}" wx:for-item="item">
+        <template is="TicketGirdTemplate" data="{{...item}}" />
+      </block>
+    </radio-group>
+  </view>
+  <button type="warn" class="ticket-btn" bindtap="OnGiveTicket">投票</button>
+  <view class="ticket-btn ticket-top" catchtap="TicketTopTab" data-ticketTid="{{tickets.list.id}}">排行榜</view>
+</view>

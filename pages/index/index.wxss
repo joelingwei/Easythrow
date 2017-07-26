@@ -1,0 +1,8 @@
+@import "index-gird/index-gird-template.wxss";
+.tickets-container {
+  width: 95%;
+  margin:20rpx auto;
+}
+.banner-list{
+  width: 100%;
+}

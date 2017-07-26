@@ -1,0 +1,15 @@
+<import src="index-gird/index-gird-template.wxml" />
+<view style="margin-bottom:30rpx;">
+  <swiper indicator-dots="true" autoplay="true" circular="true" interval="3000">
+    <block wx:for="{{banners}}" wx:for-item="item">
+      <swiper-item>
+        <image class="banner-list" src="{{item.pic}}" data-TicketId="{{item.tid}}" catchtap="onBannerTap"></image>
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class="tickets-container">
+    <block wx:for="{{tickets}}" wx:for-item="item">
+      <template is="IndexGirdTemplate" data="{{...item}}" />
+    </block>
+  </view>
+</view>

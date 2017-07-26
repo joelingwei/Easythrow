@@ -1,0 +1,94 @@
+.ticket-container {
+  display: flex;
+  flex-direction: column;
+  padding: 0 10rpx;
+  float: left;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding-top: 10rpx;
+  margin: 0 4rpx 20rpx;
+}
+
+.ticket-img {
+  width: 300rpx;
+  height: 200rpx;
+  padding-bottom: 20rpx;
+}
+
+.ticket-title {
+  margin-bottom: 16rpx;
+  font-size: 24rpx;
+  margin-left: 10rpx;
+  font-weight: bold;
+}
+
+.radio-item {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  height: 35rpx;
+}
+
+.radio-item icon {
+  position: absolute;
+  top: 5rpx;
+  left: 1rpx;
+}
+
+.radio-input {
+  width: 30rpx;
+  height: 30rpx;
+  /* border-radius: 10rpx;
+  border: 1px solid #ddd;
+  margin-top: 5rpx;   */
+}
+
+.ticket-list-item-thumb-caption-progress {
+  margin-bottom: 0;
+  margin-top: 8px;
+  overflow: hidden;
+  height: 20px;
+  background-color: #f5f5f5;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.ticket-list-item-thumb-caption-progress-bar {
+  float: left;
+  width: 0%;
+  height: 100%;
+  font-size: 12px;
+  line-height: 20px;
+  color: #fff;
+  text-align: center;
+  background-color: #e64340;
+  -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+  -webkit-transition: width 0.6s ease;
+  -o-transition: width 0.6s ease;
+  transition: width 0.6s ease;
+}
+
+.stat {
+  margin-top: 8rpx;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20rpx;
+}
+
+.badge {
+  display: inline-block;
+  min-width: 10px;
+  padding: 3px 7px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #fff;
+  line-height: 1;
+  vertical-align: middle;
+  white-space: nowrap;
+  text-align: center;
+  background-color: #aea79f;
+  border-radius: 10px;
+  margin-left: 5rpx;
+}

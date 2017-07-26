@@ -1,0 +1,122 @@
+.list:first-child{
+  border-top-right-radius: 4px;
+  border-top-left-radius: 4px;
+}
+
+.list{
+  position: relative;
+  display: block;
+  padding: 10rpx 15rpx;
+  margin-bottom: -1rpx;
+  background-color: #ffffff;
+  border: 1rpx solid #dddddd;
+}
+
+.table{
+  width: 100%;
+  background: none;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.tr{
+  display: flex;
+  flex-direction: row;
+}
+.td{
+  display:flex;
+  flex-direction:column;
+  width:100%;
+}
+.td-table{
+  position: relative;
+}
+.td-table-tr{
+  flex-direction:row;
+  display:flex;
+}
+.list-item-number{
+    padding-right: 12rpx;
+    width: 10%;
+    margin-top:50rpx;
+}
+
+.list-item-number_num{
+    background-color: #df382c;
+    display: inline;
+    padding: .2em .6em .3em;
+    font-size: 75%;
+    font-weight: bold;
+    line-height: 1;
+    color: #ffffff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25em;
+}
+.list-item-image{
+    width: 30%;
+}
+
+.list-thumb-image-img{
+  width:100%;
+  max-width:150px;
+  border-radius:6px;
+  vertical-align:middle;
+  height:100rpx;
+}
+.list-item-title{
+  padding: 0 6px;
+  vertical-align: top;  
+  font-weight:bold;
+}
+.list-item-title text{
+  color:#e95420;
+}
+.list-item-stat{
+    position:absolute;
+    right:0;
+    vertical-align: top;
+}
+.list-item-bar{
+    margin-top: 8px;
+    margin-bottom: 0;
+    overflow: hidden;
+    height: 20px;
+    background-color: #f5f5f5;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+}
+.list-item-bar-text{
+    float: left;
+    height: 100%;
+    font-size: 12px;
+    line-height: 20px;
+    color: #ffffff;
+    text-align: center;
+    background-color: #e64340;
+    -webkit-box-shadow: inset 0 -1px 0 rgba(0,0,0,0.15);
+    box-shadow: inset 0 -1px 0 rgba(0,0,0,0.15);
+    -webkit-transition: width 0.6s ease;
+    -o-transition: width 0.6s ease;
+    transition: width 0.6s ease;
+}
+.label-success{
+    background-color: #AEA79F;
+}
+.badge {
+  display: inline-block;
+  min-width: 10px;
+  padding: 3px 7px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #fff;
+  line-height: 1;
+  vertical-align: middle;
+  white-space: nowrap;
+  text-align: center;
+  background-color: #aea79f;
+  border-radius: 10px;
+  margin-left: 5rpx;
+}

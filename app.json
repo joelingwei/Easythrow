@@ -1,0 +1,12 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/index/ticket/ticket",
+    "pages/index/ticket/ticket-detail/ticket-detail",
+    "pages/index/ticket/ticket-top/ticket-top",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "navigationBarBackgroundColor": "#4E4A46"
+  }
+}

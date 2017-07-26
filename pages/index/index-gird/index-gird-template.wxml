@@ -1,0 +1,9 @@
+<template name="IndexGirdTemplate">
+  <view class="ticket-container">
+    <image class="ticket-img" catchtap="onTicketsTap" data-ticketId="{{id}}" src="{{pic}}"></image>
+    <view class="ticket-main">
+      <text class="ticket-title">{{name}}</text>
+      <text class="ticket-time">{{start_time}}--{{end_time}}</text>
+    </view>    
+  </view>
+</template>

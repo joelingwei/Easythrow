@@ -1,0 +1,36 @@
+<template name="TicketTopListTemplate">
+  <view class="list">
+    <view class="table">
+      <view class="tr">
+        <view class="list-item-number">
+        <view wx:if="{{top <4}}">
+          <text class="list-item-number_num">{{top}}</text>
+        </view>
+        <view wx:else>
+          <text class="list-item-number_num label-success">{{top}}</text>
+        </view>
+        </view>
+        <view class="td">
+          <view class="td-table">
+            <view class="td-table-tr">
+              <view class="list-item-image">
+                <view class="list-thumb-image">
+                  <image class="list-thumb-image-img" src="{{pic}}" catchtap="onTicketsTap" data-ticketlistId="{{id}}" data-ticketlistTid="{{tid}}" data-ticketlistTop="{{top}}"></image>
+                </view>
+              </view>
+              <view class="list-item-title">
+                <text>{{name}}</text>
+              </view>
+              <view class="list-item-stat">
+                <text class="badge">{{ticket_count}}票</text>
+              </view>
+            </view>
+          </view>
+          <view class="list-item-bar">
+            <view class="list-item-bar-text" style="width:{{ticket_point}}%;"></view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>
