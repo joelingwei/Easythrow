@@ -1,4 +1,5 @@
 @import "../ticket-data/ticket-data-template.wxss";
+@import "../../../../wxParse/wxParse.wxss";
 .banner {
   width: 100%;
   margin-bottom: 20rpx;
@@ -52,4 +53,9 @@
 
 .td{
   width: 50%;
+}
+.tickets_content{
+  font-size:24rpx;
+  color:#666;
+  font-family:MicroSoft YaHei;
 }

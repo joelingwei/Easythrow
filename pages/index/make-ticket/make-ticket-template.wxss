@@ -1,0 +1,22 @@
+.can_ticket{
+  width:80rpx;
+  height:80rpx;
+  padding:15rpx;
+  background:rgba(0, 0, 0, 0.3);
+  border-radius:60rpx;
+  position:fixed;
+  bottom:30rpx;
+  right:35rpx;
+  display:flex;
+  flex-direction:column;
+  text-align:center;
+}
+.make_ticket{
+  width:80rpx;
+  height:50rpx;
+  margin:0 auto;
+}
+.can_ticket text{
+  font-size:18rpx;
+  color: #fff;
+}

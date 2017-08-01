@@ -114,6 +114,21 @@ Page({
       url: 'ticket/ticket?id=' + ticketId
     })
   },
+  MakeTicket:function(){
+    wx.showModal({
+      title: '提示',
+      content: '请联系客服为您分配【投票发起】账号',
+      success: function (res) {
+        if (res.confirm) {
+          wx.makePhoneCall({
+            phoneNumber: '13027198557'
+          })
+        } else if (res.cancel) {
+          
+        }
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -164,14 +179,72 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-  
+    wx.showLoading({
+      title: '加载中',
+    });
+    wx.showNavigationBarLoading();
+    var that = this;
+    wx.request({
+      url: app.globalData.postBase + '/getTicketList',
+      header: {
+        'content-type': 'application/json'
+      },
+      success: function (res) {
+        that.setData({
+          tickets: res.data
+        })
+      }
+    });
+    wx.request({
+      url: app.globalData.postBase + '/getBanner',
+      header: {
+        'content-type': 'application/json'
+      },
+      success: function (res) {        
+        that.setData({
+          banners: res.data
+        })
+      }
+    });
+    wx.hideNavigationBarLoading();
+    wx.hideLoading();
+    wx.stopPullDownRefresh();
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-  
+    wx.showLoading({
+      title: '加载中',
+    });
+    wx.showNavigationBarLoading();
+    var that = this;
+    wx.request({
+      url: app.globalData.postBase + '/getTicketList',
+      header: {
+        'content-type': 'application/json'
+      },
+      success: function (res) {
+        that.setData({
+          tickets: res.data
+        })
+      }
+    });
+    wx.request({
+      url: app.globalData.postBase + '/getBanner',
+      header: {
+        'content-type': 'application/json'
+      },
+      success: function (res) {
+        that.setData({
+          banners: res.data
+        })
+      }
+    });
+    wx.hideNavigationBarLoading();
+    wx.hideLoading();
+    wx.stopPullDownRefresh();
   },
 
   /**

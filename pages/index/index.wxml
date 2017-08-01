@@ -1,4 +1,5 @@
 <import src="index-gird/index-gird-template.wxml" />
+<import src="make-ticket/make-ticket-template.wxml" />
 <view style="margin-bottom:30rpx;">
   <swiper indicator-dots="true" autoplay="true" circular="true" interval="3000">
     <block wx:for="{{banners}}" wx:for-item="item">
@@ -11,5 +12,9 @@
     <block wx:for="{{tickets}}" wx:for-item="item">
       <template is="IndexGirdTemplate" data="{{...item}}" />
     </block>
+  </view>
+   <view class="can_ticket" bindtap="MakeTicket">
+    <image class="make_ticket" src="../../images/index/make_ticket.png"></image>
+    <text>我要发起</text>
   </view>
 </view>

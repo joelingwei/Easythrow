@@ -1,3 +1,4 @@
+var WxParse = require('../../../wxParse/wxParse.js');
 //获取应用实例
 var app = getApp();
 Page({
@@ -28,6 +29,8 @@ Page({
         wx.setNavigationBarTitle({
           title: res.data.list.name,
         });
+        var article = res.data.list.content;
+        WxParse.wxParse('article', 'html', article, that, 5);
         that.setData({
           tickets: res.data
         })
@@ -42,6 +45,21 @@ Page({
   onBindFocus: function (event) {
     this.setData({
       searchPanelShow: true
+    })
+  },
+  MakeTicket: function () {
+    wx.showModal({
+      title: '提示',
+      content: '请联系客服为您分配【投票发起】账号',
+      success: function (res) {
+        if (res.confirm) {
+          wx.makePhoneCall({
+            phoneNumber: '13027198557'
+          })
+        } else if (res.cancel) {
+
+        }
+      }
     })
   },
   onBindConfirm: function (event) {
@@ -150,17 +168,33 @@ Page({
           header: {
             'content-type': 'application/json'
           },
-          success: function (res) {
+          success: function (res) {            
             wx.showToast({
               title: res.data.msg,
               duration: 1000,
               icon: 'success',
               mask: true
-            });            
+            });         
           }
         })
       }
     }
+  },
+  OnGiveTickets:function(event){
+    wx.showToast({
+      title: '投票已结束，选择其他投票活动吧！',
+      duration: 1000,
+      icon: 'success',
+      mask: true
+    });
+  },
+  OnGiveTicketss:function(event){
+    wx.showToast({
+      title: '投票未开始，选择其他投票活动吧！',
+      duration: 1000,
+      icon: 'success',
+      mask: true
+    });
   },
   /**
      * 生命周期函数--监听页面初次渲染完成

@@ -1,0 +1,6 @@
+<template name="MakeTickets">
+  <view class="can_ticket" bindtap="MakeTicket">
+    <image class="make_ticket" src="../../../images/index/make_ticket.png"></image>
+    <text>我要发起</text>
+  </view> 
+</template>

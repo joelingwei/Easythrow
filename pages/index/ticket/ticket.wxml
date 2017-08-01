@@ -1,13 +1,19 @@
 <import src="ticket-gird/ticket-gird-template.wxml" />
 <import src="ticket-data/ticket-data-template.wxml" />
+<import src="../make-ticket/make-ticket-template.wxml" />
+<import src="../../../wxParse/wxParse.wxml"/>
 <view class="container" style="margin-bottom:30rpx;">
   <view class="banner">
     <image src="{{tickets.list.pic}}"></image>
   </view>
-  <text class="desc">{{tickets.list.content}}</text>
+  <view class="desc">
+    <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+  </view>
   <view class="time_status">
     <icon type="waiting" size="14" />
-    <text wx:if="{{tickets.list.end_time}}">投票已开始，截止时间：{{tickets.list.end_time}}</text>
+    <text wx:if="{{tickets.list.is_ticket < 1}}">投票已开始，截止时间：{{tickets.list.end_time}}</text>
+    <text wx:elif="{{tickets.list.is_ticket > 1}}">投票未开始，开始时间：{{tickets.list.start_time}}</text>
+    <text wx:elif="{{tickets.list.is_ticket > 0}}">投票已结束</text>    
     <text wx:else>投票已开始，未有截止时间限制</text>
   </view>
   <view class="tickets">
@@ -25,6 +31,11 @@
       </block>
     </radio-group>
   </view>
-  <button type="warn" class="ticket-btn" bindtap="OnGiveTicket">投票</button>
-  <view class="ticket-btn ticket-top" catchtap="TicketTopTab" data-ticketTid="{{tickets.list.id}}">排行榜</view>
+  
+  <button type="warn" class="not_btn" wx:if="{{tickets.list.is_ticket > 1}}" bindtap="OnGiveTicketss">投票</button>
+  <button type="warn" class="not_btn" wx:elif="{{tickets.list.is_ticket > 0}}" bindtap="OnGiveTickets">投票</button>
+  <button type="warn" class="ticket-btn" wx:else bindtap="OnGiveTicket">投票</button>
+  <view class="not_btn ticket-top" wx:if="{{tickets.list.is_ticket > 1}}">排行榜</view>
+  <view class="ticket-btn ticket-top" wx:else catchtap="TicketTopTab" data-ticketTid="{{tickets.list.id}}">排行榜</view>
+  <template is="MakeTickets" />
 </view>

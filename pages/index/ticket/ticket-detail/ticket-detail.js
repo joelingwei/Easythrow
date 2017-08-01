@@ -1,4 +1,4 @@
-// pages/index/ticket-detail/ticket-detail.js
+var WxParse = require('../../../../wxParse/wxParse.js');
 var app = getApp();
 Page({
   /**
@@ -31,7 +31,9 @@ Page({
       success: function (res) {
         wx.setNavigationBarTitle({
           title: res.data.name + '-' + res.data.title,
-        })
+        });
+        var article = res.data.content;
+        WxParse.wxParse('article', 'html', article, that, 5);
         that.setData({
           tickets: res.data
         })
@@ -95,6 +97,22 @@ Page({
         }
       })
     }
+  },
+  OnGiveTickets: function (event) {
+    wx.showToast({
+      title: '投票已结束，选择其他投票活动吧！',
+      duration: 1000,
+      icon: 'success',
+      mask: true
+    });
+  },
+  OnGiveTicketss: function (event) {
+    wx.showToast({
+      title: '投票未开始，选择其他投票活动吧！',
+      duration: 1000,
+      icon: 'success',
+      mask: true
+    });
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

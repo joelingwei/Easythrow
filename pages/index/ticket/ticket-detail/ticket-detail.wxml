@@ -1,3 +1,4 @@
+<import src="../../../../wxParse/wxParse.wxml"/>
 <view class="container" style="margin-bottom:30rpx;">
   <view class="banner">
     <image src="{{tickets.banner}}"></image>
@@ -18,7 +19,11 @@
   </view>
   <view class="votes-description-content">
     <image src="{{tickets.pic}}"></image>
-    <text>{{tickets.content}}</text>
+    <view class="tickets_content">
+      <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+    </view>
   </view>
-  <button type="warn" class="ticket-btn" bindtap="OnGiveTicket">投票</button>
+  <button type="warn" class="not_btn" wx:if="{{tickets.is_ticket > 1}}" bindtap="OnGiveTicketss">投票</button>
+  <button type="warn" class="not_btn" wx:elif="{{tickets.is_ticket > 0}}" bindtap="OnGiveTickets">投票</button>
+  <button type="warn" class="ticket-btn" wx:else bindtap="OnGiveTicket">投票</button>
 </view>

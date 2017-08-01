@@ -1,4 +1,5 @@
 @import "index-gird/index-gird-template.wxss";
+@import "make-ticket/make-ticket-template.wxss";
 .tickets-container {
   width: 95%;
   margin:20rpx auto;

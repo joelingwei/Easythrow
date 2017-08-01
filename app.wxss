@@ -12,3 +12,9 @@ text{
   font-size: 24rpx;
   color: #666;
 }
+.not_btn{
+  width:90%;
+  height:80rpx;
+  line-height:80rpx;
+  background: #A0A69D !important;
+}
